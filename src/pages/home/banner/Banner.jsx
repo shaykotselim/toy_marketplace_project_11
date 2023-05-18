@@ -14,13 +14,13 @@ const Banner = () => {
           className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/30">
-          <div className="w-3/4 text-center md:w-2/4">
+          <div className="w-3/4  md:w-2/4">
             <Typography
               variant="h1"
               color="white"
               className="mb-4 text-3xl md:text-4xl lg:text-5xl"
             >
-              Welcome to Education and Learning Toys!
+            Education and Learning Toys!
             </Typography>
             <Typography
               variant="lead"
@@ -30,11 +30,7 @@ const Banner = () => {
               Explore our curated collection of engaging toys designed to
               promote learning and development. From early learning toys and
               STEM activities to language and literacy tools, we have everything
-              to spark your child's curiosity. Unleash their creativity with our
-              arts and crafts supplies. Our toys foster critical thinking,
-              problem-solving, and a love for learning. Browse through our
-              diverse selection and find the perfect toys to inspire your
-              child's growth and education.
+              to spark your child's curiosity. 
             </Typography>
             <div className="flex justify-center gap-2">
               <Button size="lg" color="white">
@@ -53,14 +49,14 @@ const Banner = () => {
           alt="image 2"
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 grid h-full w-full items-center bg-black/30">
+        <div className="absolute inset-0 grid h-full w-full items-center bg-black/50">
           <div className="w-3/4 pl-12 md:w-2/4 md:pl-20 lg:pl-32">
             <Typography
               variant="h1"
               color="white"
               className="mb-4 text-3xl md:text-4xl lg:text-5xl"
             >
-              Welcome to Education and Learning Toys!
+             Education and Learning Toys!
             </Typography>
             <Typography
               variant="lead"
@@ -70,11 +66,7 @@ const Banner = () => {
               Explore our curated collection of engaging toys designed to
               promote learning and development. From early learning toys and
               STEM activities to language and literacy tools, we have everything
-              to spark your child's curiosity. Unleash their creativity with our
-              arts and crafts supplies. Our toys foster critical thinking,
-              problem-solving, and a love for learning. Browse through our
-              diverse selection and find the perfect toys to inspire your
-              child's growth and education.
+              to spark your child's curiosity.
             </Typography>
             <div className="flex gap-2">
               <Button size="lg" color="white">
@@ -93,14 +85,14 @@ const Banner = () => {
           alt="image 3"
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 grid h-full w-full items-end bg-black/30">
+        <div className="absolute inset-0 grid h-full w-full items-end bg-black/50">
           <div className="w-3/4 pl-12 pb-12 md:w-2/4 md:pl-20 md:pb-20 lg:pl-32 lg:pb-32">
             <Typography
               variant="h1"
               color="white"
               className="mb-4 text-3xl md:text-4xl lg:text-5xl"
             >
-              Welcome to Education and Learning Toys!
+              Education and Learning Toys!
             </Typography>
             <Typography
               variant="lead"
@@ -110,11 +102,7 @@ const Banner = () => {
               Explore our curated collection of engaging toys designed to
               promote learning and development. From early learning toys and
               STEM activities to language and literacy tools, we have everything
-              to spark your child's curiosity. Unleash their creativity with our
-              arts and crafts supplies. Our toys foster critical thinking,
-              problem-solving, and a love for learning. Browse through our
-              diverse selection and find the perfect toys to inspire your
-              child's growth and education.
+              to spark your child's curiosity.
             </Typography>
             <div className="flex gap-2">
               <Button size="lg" color="white">
@@ -133,14 +121,14 @@ const Banner = () => {
           alt="image 4"
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 grid h-full w-full items-end bg-black/30">
+        <div className="absolute inset-0 grid h-full w-full items-end bg-black/50">
           <div className="w-3/4 pl-12 pb-12 md:w-2/4 md:pl-20 md:pb-20 lg:pl-32 lg:pb-32">
             <Typography
               variant="h1"
               color="white"
               className="mb-4 text-3xl md:text-4xl lg:text-5xl"
             >
-              Welcome to Education and Learning Toys!
+            Education and Learning Toys!
             </Typography>
             <Typography
               variant="lead"
@@ -150,11 +138,7 @@ const Banner = () => {
               Explore our curated collection of engaging toys designed to
               promote learning and development. From early learning toys and
               STEM activities to language and literacy tools, we have everything
-              to spark your child's curiosity. Unleash their creativity with our
-              arts and crafts supplies. Our toys foster critical thinking,
-              problem-solving, and a love for learning. Browse through our
-              diverse selection and find the perfect toys to inspire your
-              child's growth and education.
+              to spark your child's curiosity.
             </Typography>
             <div className="flex gap-2">
               <Button size="lg" color="white">

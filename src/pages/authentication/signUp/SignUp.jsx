@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
     Card,
     Input,
@@ -8,17 +8,45 @@ import {
   } from "@material-tailwind/react";
   import { FcGoogle } from 'react-icons/fc';
   import { Link } from "react-router-dom";
+import { AuthContext } from '../../../provider/AuthProvider';
 
-  const handleSignUp =event=>{
-    event.preventDefault();
-    const form = event.target;
-    const name = form.name.value;
-    const email = form.name.value;
-    const password = form.name.value;
-    const photo_url = form.photo_url.value;
-    console.log(name, email, password, photo_url);
-  }
+  
+  
+
+
 const SignUp = () => {
+    const {googleSignIn,createUserEmail,profileUpdate} = useContext(AuthContext);
+
+    const handleSignUp =event=>{
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const photo_url = form.photo_url.value;
+        console.log(name, email, password, photo_url);
+        
+        createUserEmail(email, password)
+        .then(result =>{
+            const loggedUser = result.user;
+            profileUpdate(result.user,name, photo_url)
+            alert('Profile name & photo url update');
+            console.log(loggedUser);
+        })
+        .then(error=>{
+            alert(error.message)
+        })
+      }
+    const handleGoogleSignIn=()=>{
+        googleSignIn()
+        .then(result =>{
+            console.log(result.user);
+            
+        })
+        .catch(error=>{
+            alert(error.message);
+        })
+      }
     return (
         <div className="container text-center">
       <Card className="px-8 lg:px-[470px]" color="transparent" shadow={false}>
@@ -65,7 +93,7 @@ const SignUp = () => {
             </Link>
           </Typography>
         </form>
-        <Button  className='mt-2 bg-black flex justify-center items-center gap-1 text-xl' fullWidth>
+        <Button onClick={handleGoogleSignIn}  className='mt-2 bg-black flex justify-center items-center gap-1 text-xl' fullWidth>
             <span><FcGoogle/></span><span>Sign In With Google</span> 
         </Button>
       </Card>
