@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import {
   Card,
   Input,
@@ -12,6 +12,7 @@ import { AuthContext } from "../../../provider/AuthProvider";
 
 const SingIn = () => {
   const {signIn} = useContext(AuthContext)
+  const [error, setError] = useState("")
   const handleSignIn=event=>{
     event.preventDefault();
     const form = event.target;
@@ -21,12 +22,12 @@ const SingIn = () => {
     signIn(email, password)
     .then(result=>{
       const user = result.user
-      alert('Login Successfully');
-      const location = useLocation();
-      location.path = '/'
+      setError('Login Successfully');
+      // const location = useLocation();
+      // location.path = '/'
     })
     .catch(error=>{
-      alert(error.message)
+      setError(error.message)
     })
 }
 
@@ -36,6 +37,7 @@ const SingIn = () => {
         <Typography variant="h4" color="blue-gray">
           Please Sign In Here
         </Typography>
+        <p className="text-red-500">{error}</p>
         <form onSubmit={handleSignIn} className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
           <div className="mb-4 flex flex-col gap-6">
             

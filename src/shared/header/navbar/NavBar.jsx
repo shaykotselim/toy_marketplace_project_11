@@ -10,7 +10,7 @@ import {
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import { AuthContext } from "../../../provider/AuthProvider";
-import logo2 from "../../../assets/banner/bannar1.jpg";
+
 const NavBar = () => {
   const [openNav, setOpenNav] = useState(false);
   //-------------LogOut Area Start------------------
@@ -19,7 +19,7 @@ const NavBar = () => {
   const handleSignOut = () => {
     logOut()
       .then(() => {
-        alert('Sign-Out Successfully')
+        alert("Sign-Out Successfully");
       })
       .catch((error) => {
         alert(error.message);
@@ -36,56 +36,29 @@ const NavBar = () => {
 
   const navList = (
     <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      {/* <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <NavLink to="/"className={({ isActive }) =>
-            isActive ? "text-orange-600" : "text-black"
-          }>
-          Home
-        </NavLink>
-      </Typography>
-      
-    <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <NavLink to="/all-toys"className={({ isActive }) =>
-            isActive ? "text-orange-600" : "text-black"
-          }>
-          All Toys
-        </NavLink>
-    </Typography>
-
-    <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <NavLink to="/blog"className={({ isActive }) =>
-            isActive ? "text-orange-600" : "text-black"
-          }>
-          Blog
-        </NavLink>
-    </Typography> */}
-
-      <li className="text-black"><Link to='/'>Home</Link></li>
-      <li className="text-black"><Link to="/all-toys">All Toys</Link></li>
-      <li className="text-black cursor-pointer"><Link to="/blog">Blog</Link></li>
-      {
-        user?<li className="text-black"><Link to="/add-toys">Add Toys</Link></li>:''
-      }
-      {
-        user?<li className="text-black"><Link to="/my-toys">My Toys</Link></li>:''
-      }
-      
-
+      <li className="text-black">
+        <Link to="/">Home</Link>
+      </li>
+      <li className="text-black">
+        <Link to="/all-toys">All Toys</Link>
+      </li>
+      <li className="text-black cursor-pointer">
+        <Link to="/blog">Blog</Link>
+      </li>
+      {user ? (
+        <li className="text-black">
+          <Link to="/add-toys">Add Toys</Link>
+        </li>
+      ) : (
+        ""
+      )}
+      {user ? (
+        <li className="text-black">
+          <Link to="/my-toys">My Toys</Link>
+        </li>
+      ) : (
+        ""
+      )}
     </ul>
   );
 
@@ -99,20 +72,29 @@ const NavBar = () => {
         </div>
         <div className="hidden lg:block">{navList}</div>
         <div className="flex gap-4 lg:items-center lg:gap-4">
-          
           <div className="flex gap-4 ml-20 lg:ml-0 items-center">
-          {
-            user?<img title={user?.displayName} className="w-10 h-10 rounded-full cursor-pointer" src={user?.photoURL}/>:''
-          }
-         
-          {
-            user?<Button onClick={handleSignOut}>Sign-out</Button>:<Button ><NavLink to="/sign-in">Sign-In</NavLink></Button> 
-          }
+            {user ? (
+              <img
+                title={user?.displayName}
+                className="w-10 h-10 rounded-full cursor-pointer"
+                src={user?.photoURL}
+              />
+            ) : (
+              ""
+            )}
+
+            {user ? (
+              <Button onClick={handleSignOut}>Sign-out</Button>
+            ) : (
+              <Button>
+                <NavLink to="/sign-in">Sign-In</NavLink>
+              </Button>
+            )}
           </div>
         </div>
         <IconButton
           variant="text"
-          className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+          className=" h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
           ripple={false}
           onClick={() => setOpenNav(!openNav)}
         >
@@ -149,11 +131,8 @@ const NavBar = () => {
         </IconButton>
       </div>
       <MobileNav open={openNav}>
-        <div className=" bg-blue-gray-300 p-4 rounded w-1/2">
-          {navList}
-          {/* {
-            user?<Button className="w-full" onClick={handleSignOut}>Sign-out</Button>:''
-          } */}
+        <div className=" bg-blue-gray-300 p-4 rounded w-1/2 ">
+            {navList}
         </div>
       </MobileNav>
     </Navbar>

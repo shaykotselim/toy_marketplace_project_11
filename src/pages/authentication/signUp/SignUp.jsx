@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import {
     Card,
     Input,
@@ -16,7 +16,7 @@ import { AuthContext } from '../../../provider/AuthProvider';
 
 const SignUp = () => {
     const {googleSignIn,createUserEmail,profileUpdate} = useContext(AuthContext);
-
+    const [error, setError]=useState('')
     const handleSignUp =event=>{
         event.preventDefault();
         const form = event.target;
@@ -31,20 +31,20 @@ const SignUp = () => {
             const loggedUser = result.user;
             profileUpdate(result.user,name, photo_url)
             alert('Profile name & photo url update');
-            console.log(loggedUser);
+            setError(loggedUser);
         })
         .then(error=>{
-            alert(error.message)
+            setError(error.message)
         })
       }
     const handleGoogleSignIn=()=>{
         googleSignIn()
         .then(result =>{
-            console.log(result.user);
+            setError("Registration Successfully");
             
         })
         .catch(error=>{
-            alert(error.message);
+            setError(error.message);
         })
       }
     return (
@@ -53,6 +53,7 @@ const SignUp = () => {
         <Typography variant="h4" color="blue-gray">
           Sign Up Please!!!
         </Typography>
+        <p className="text-red-500">{error}</p>
         <form onSubmit={handleSignUp} className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
           <div className="mb-4 flex flex-col gap-6">
             
