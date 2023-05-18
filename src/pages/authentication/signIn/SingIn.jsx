@@ -20,10 +20,7 @@ const SingIn = () => {
     <div className="container text-center">
       <Card className="px-8 lg:px-[470px]" color="transparent" shadow={false}>
         <Typography variant="h4" color="blue-gray">
-          Sign In
-        </Typography>
-        <Typography color="gray" className="mt-1 font-normal">
-          Please Sing-in Here
+          Please Sign In Here
         </Typography>
         <form onSubmit={handleSignIn} className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
           <div className="mb-4 flex flex-col gap-6">
