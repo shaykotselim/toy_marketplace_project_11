@@ -6,6 +6,7 @@ import {
   Button,
   IconButton,
   Card,
+  Tooltip,
 } from "@material-tailwind/react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/logo.png";
@@ -74,11 +75,13 @@ const NavBar = () => {
         <div className="flex gap-4 lg:items-center lg:gap-4">
           <div className="flex gap-4 ml-20 lg:ml-0 items-center">
             {user ? (
-              <img
-                title={user?.displayName}
+              <Tooltip content={user?.displayName}>
+                <img
+               
                 className="w-10 h-10 rounded-full cursor-pointer"
                 src={user?.photoURL}
               />
+              </Tooltip>
             ) : (
               ""
             )}
