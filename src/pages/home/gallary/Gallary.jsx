@@ -39,7 +39,7 @@ const Gallary = () => {
    
     return (
         <div>
-            <div className=' p-16'>
+            <div data-aos="flip-down" className=' p-16'>
             <p className='text-center text-3xl font-bold text-black p-2'>Science & Engineering Kits Gallery</p>
                 <p className='mx-auto text-center text-black lg:w-2/4'>The science and engineering kit gallery offers a diverse range of educational resources. From model kits of famous experiments to DIY circuit building kits, these hands-on tools engage learners in understanding electrical engineering, robotics, and more. </p>
             </div>

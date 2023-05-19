@@ -10,10 +10,6 @@ import {
   import { Link } from "react-router-dom";
 import { AuthContext } from '../../../provider/AuthProvider';
 
-  
-  
-
-
 const SignUp = () => {
     const {googleSignIn,createUserEmail,profileUpdate} = useContext(AuthContext);
     const [error, setError]=useState('')

@@ -11,12 +11,12 @@ const About = () => {
     <div>
       <section className="container mx-auto px-4">
         <div className="sm:md:flex justify-evenly gap-20 items-center py-20">
-          <div className="w-full md:w-1/2">
+          <div data-aos="zoom-in-up" className="w-full md:w-1/2">
             <img className="rounded" src={aboutImg} alt="" />
           </div>
 
           <div className="w-full md:w-1/2">
-            <div>
+            <div data-aos="zoom-in-left">
               <h3 className="text-4xl text-indigo-800 font-medium ">
                 Who We Are
               </h3>
@@ -50,10 +50,9 @@ const About = () => {
       <div className="mb-20"></div>
 
       
-        <Marquee gradientColor=	{255, 255, 255} direction="left">
-        <div className="container mx-auto px-4">
-          <div className="sm:md:flex gap-10 pb-10">
-            <div className="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-light-blue-300 duration-300  bg-gradient-to-r from-primary to-secondary text-neutral-content">
+        <div className="lg:container lg:mx-auto px-4">
+          <div data-aos="fade-down-right" className="lg:grid lg:grid-cols-3 gap-4 lg:gap-28 pb-10">
+            <div className=" bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-light-blue-300 duration-300  bg-gradient-to-r from-primary to-secondary ">
               <div className="items-center p-4 text-left">
                 <h2 className=" text-3xl text-center text-white">
                   Our Mission{" "}
@@ -65,7 +64,7 @@ const About = () => {
                     alt=""
                   />
                 </div>
-                <p className="text-white">
+                <p className="text-white container mx-auto">
                   Our mission is to empower individuals of all ages to explore
                   the wonders of the natural world, understand fundamental
                   scientific concepts, and develop problem-solving skills
@@ -73,20 +72,20 @@ const About = () => {
                 </p>
               </div>
             </div>
-            <div className="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-light-blue-300 duration-300  card  bg-gradient-to-r from-primary to-secondary text-neutral-content">
+            <div className=" bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-light-blue-300 duration-300   bg-gradient-to-r from-primary to-secondary ">
               <div className=" p-4 items-center text-left">
                 <h2 className=" text-center text-white text-3xl">
                   Our Vision{" "}
                 </h2>
 
-                <div className="flex justify-center p-4">
+                <div className="lg:flex justify-center p-4">
                   <img
                     className="h-[200px] w-[200px] rounded-full"
                     src={values}
                     alt=""
                   />
                 </div>
-                <p className=" text-white">
+                <p className=" text-white ">
                   {" "}
                   Our vision is to become a leading provider of high-quality
                   science and engineering kits that facilitate experiential
@@ -94,10 +93,10 @@ const About = () => {
                 </p>
               </div>
             </div>
-            <div className="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-light-blue-300 duration-300  card  bg-gradient-to-r from-primary to-secondary text-neutral-content">
+            <div className=" bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-light-blue-300 duration-300  bg-gradient-to-r from-primary to-secondary ">
               <div className=" p-4 items-center text-left">
                 <h2 className="text-3xl text-center text-white">Our Values </h2>
-                <div className="flex justify-center p-4 ">
+                <div className="sm:md:flex justify-center p-4 ">
                   <img
                     className="h-[200px] w-[200px] rounded-full "
                     src={vision}
@@ -114,9 +113,7 @@ const About = () => {
               </div>
             </div>
           </div>
-          </div>
-        </Marquee>
-      
+        </div>
     </div>
   );
 };
