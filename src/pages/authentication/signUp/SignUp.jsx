@@ -58,24 +58,7 @@ const SignUp = () => {
             <Input name="photo_url" size="lg" label="Photo-Url" />
             <Input name="password" type="password" size="lg" label="Password" />
           </div>
-          <Checkbox
-            label={
-              <Typography
-                variant="small"
-                color="gray"
-                className="flex items-center font-normal"
-              >
-                I agree the
-                <a
-                  href="#"
-                  className="font-medium transition-colors hover:text-blue-500"
-                >
-                  &nbsp;Terms and Conditions
-                </a>
-              </Typography>
-            }
-            containerProps={{ className: "-ml-2.5" }}
-          />
+          
           <Button type="submit" className="mt-6 bg-blue-500" fullWidth>
             Register
           </Button>
