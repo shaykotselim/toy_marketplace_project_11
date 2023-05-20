@@ -11,11 +11,11 @@ const Footer = () => {
   return (
     <footer className=" w-full bg-black p-8">
         <div className="flex justify-center border-b-2 p-2">
-            <p className="text-3xl text-white font-bold font-serif">Education & Learning</p>
+            <p data-aos="zoom-in" className="text-3xl text-white font-bold font-serif">Education & Learning</p>
         </div>
       <div className="container py-8 mx-auto flex justify-around">
         <div className=" items-center">
-          <img className="w-[140px] h-[140px] rounded-full" src={logo1} alt="" />
+          <img data-aos="flip-left" className="w-[140px] h-[140px] rounded-full" src={logo1} alt="" />
           
         </div>
        
@@ -27,13 +27,17 @@ const Footer = () => {
               <Link to="/">
                 <p className="text-white mt-4">Home</p>
               </Link>
+              <Link to="/all-toys">
+                <p className="text-white">All-Toys</p>
+              </Link>
               <Link to="/blog">
                 <p className="text-white">Blog</p>
               </Link>
+             
             </div>
           </div>
           <div>
-            <p className="text-white mt-8 lg:mt-0">Service</p>
+            <p className="text-white mt-8 lg:mt-0">Category</p>
             <p className="text-white mt-4">Math-Learning-Toys</p>
             <p className="text-white">Science Kit</p>
             <p className="text-white">Engineering Tools</p>
