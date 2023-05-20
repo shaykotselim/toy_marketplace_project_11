@@ -1,6 +1,6 @@
 import { Button } from "@material-tailwind/react";
 import React, { useEffect, useState } from "react";
-import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+import { Tab, TabList, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
 import { FaStar } from "react-icons/fa";
@@ -9,7 +9,7 @@ const ShopByCategory = () => {
   const [filteredCategories, setFilteredCategories] = useState([]);
 
   useEffect(() => {
-    fetch("./category.json")
+    fetch("https://toy-marketplace-server-sigma.vercel.app/products")
       .then((res) => res.json())
       .then((data) => {
         setCategories(data);

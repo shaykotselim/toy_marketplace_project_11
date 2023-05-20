@@ -76,7 +76,7 @@ const SignUp = () => {
             }
             containerProps={{ className: "-ml-2.5" }}
           />
-          <Button type="submit" className="mt-6 bg-black" fullWidth>
+          <Button type="submit" className="mt-6 bg-blue-500" fullWidth>
             Register
           </Button>
           
@@ -90,8 +90,8 @@ const SignUp = () => {
             </Link>
           </Typography>
         </form>
-        <Button onClick={handleGoogleSignIn}  className='mt-2 bg-black flex justify-center items-center gap-1 text-xl' fullWidth>
-            <span><FcGoogle/></span><span>Sign In With Google</span> 
+        <Button onClick={handleGoogleSignIn}  className='mt-2 bg-blue-500 flex justify-center items-center gap-1 text-xl' fullWidth>
+            <span><FcGoogle/></span><span>Sign Up With Google</span> 
         </Button>
       </Card>
     </div>

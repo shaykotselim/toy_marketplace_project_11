@@ -6,12 +6,12 @@ import {
   Button,
   Typography,
 } from "@material-tailwind/react";
-
+import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../../../provider/AuthProvider";
 
 const SingIn = () => {
-  const {signIn} = useContext(AuthContext)
+  const {signIn,googleSignIn} = useContext(AuthContext)
   const [error, setError] = useState("")
   const handleSignIn=event=>{
     event.preventDefault();
@@ -29,6 +29,16 @@ const SingIn = () => {
     .catch(error=>{
       setError(error.message)
     })
+}
+const handleGoogleSignIn=()=>{
+  googleSignIn()
+  .then(result =>{
+      setError("Registration Successfully");
+      
+  })
+  .catch(error=>{
+      setError(error.message);
+  })
 }
 
   return (
@@ -76,6 +86,9 @@ const SingIn = () => {
             </Link>
           </Typography>
         </form>
+        <Button onClick={handleGoogleSignIn}  className='mt-2 bg-blue-500 flex justify-center items-center gap-1 text-xl' fullWidth>
+            <span><FcGoogle/></span><span>Sign In With Google</span> 
+        </Button>
       </Card>
     </div>
   );

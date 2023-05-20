@@ -1,6 +1,5 @@
 [
     {
-        "id":"0",
         "img":"https://www.mother.ly/wp-content/uploads/legacy-images/math-toys-for-preschoolers-0.jpg",
         "name":"Wooden Puzzles Counting Toys",
         "price": 8.99,
@@ -8,7 +7,7 @@
         "subCategory":"math-learning-toys",
         "description":"Montessori Toy for Preschool Education:This wooden sorting and stacking puzzle contains including counting blocks of 5 colors,5 pictuer puzzle and 1-9 number.when babies try to match the blocks to the target or make various combinations.It helps to build early shape, color and size differentiation skills establishing color,number counting recognition for toddlers, developing fine motor skills, curiosity, enhanceing memory with patterns."
     },
-    {   "id":"1",
+    {
         "img":"https://www.mother.ly/wp-content/uploads/legacy-images/math-toys-for-preschoolers-1.jpg",
         "name":"Wooden Pattern Blocks and Boards",
         "price": 15.99,
@@ -16,7 +15,7 @@
         "subCategory":"math-learning-toys",
         "description":"Educational wooden block set: The Melissa & doug pattern blocks and boards classic toy is a set of 120 wooden blocks in various shapes and colors, inspiring kids to assemble colorful patterns on 5 boards"
     },
-    {   "id":"2",
+    {   
         "img":"https://i5.walmartimages.com/asr/cab8b839-d10d-4571-acc7-170de3effcfb.cff1d7541cb35f4561ff0d0e0d6cb76b.jpeg",
         "name":"DIY STEM Educational Toys ",
         "price": 8.99,
@@ -24,7 +23,7 @@
         "subCategory":"science-kits",
         "description":"Build a sleek race car powered by energy from the sun--no batteries required; solar panel included!The full-color manual includes clear step-by-step illustrated instructions and scientific information about how photovoltaic technology (solar panels) harnesses and converts sunlight into electrical energy."
     },
-    {   "id":"3",
+    {  
         "img":"https://m.media-amazon.com/images/I/917LCauXfPL._AC_SX679_.jpg",
         "name":"Dark Glass Marbles & Mesh Storage Bag",
         "price": 34,
@@ -32,7 +31,7 @@
         "subCategory":"science-kits",
         "description":"STURDY TIGHT-FIT PIECES - This construction kit is designed to fit together snuggly so your marble maze won’t fall apart while you play. With 5 sturdy bases, 15 exciting action pieces, and 45 clear smooth-run track pieces, our kit has countless imaginative configurations."
     },
-    {   "id":"4",
+    {   
         "img":"https://m.media-amazon.com/images/I/911Px-FCMeL.__AC_SY300_SX300_QL70_FMwebp_.jpg",
         "name":"Thames & Kosmos Structural Engineering: Bridges & Skyscrapers",
         "price": 37.99,
@@ -40,7 +39,7 @@
         "subCategory":"engineering-tools",
         "description":"Build 20 different models that each teach about force, load, compression, tension and more Over 285 interchangeable building pieces Includes 36-page, illustrated experiment manual and Assembly guide Skill level: Intermediate"
     },
-    {   "id":"5",
+    {   
         "img":"https://m.media-amazon.com/images/I/81-+034gRrL._AC_SY300_SX300_.jpg",
         "name":" Construction Work Shop Toy Tool Kit Bench Outdoor Preschool",
         "price": 62.5,
