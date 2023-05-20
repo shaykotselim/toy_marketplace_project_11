@@ -66,10 +66,11 @@ const NavBar = () => {
   return (
     <Navbar className="mx-auto max-w-screen-xl shadow-none py-2 px-4 lg:px-4 lg:py-4">
       <div className="container mx-auto flex justify-between items-center sm: text-blue-gray-900">
-        <div>
+        <div className="flex items-center font-serif text-2xl font-bold ">
           <Link to="/">
             <img className="w-12" src={logo} alt="" />
           </Link>
+          {/* <p>Learning-Toys</p> */}
         </div>
         <div className="hidden lg:block">{navList}</div>
         <div className="flex gap-4 lg:items-center lg:gap-4">
