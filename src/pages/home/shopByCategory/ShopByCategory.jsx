@@ -78,7 +78,9 @@ const ShopByCategory = () => {
                   </p>
                 </div>
                 <div className="flex justify-center">
+                  <Link to={`/view-details/${category._id}`}>
                   <Button>View Details</Button>
+                  </Link>
                 </div>
               </div>
             </div>

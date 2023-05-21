@@ -9,6 +9,7 @@ import MyToys from "../pages/myToys/MyToys";
 import PrivetRoute from "./PrivetRoute";
 import AllToys from "../pages/allToys/AllToys";
 import Blog from "../pages/blog/Blog";
+import ViewDetails from "../pages/home/shopByCategory/ViewDetails";
 
 // import AddToys from "../pages/addToys/AddToys";
 
@@ -47,11 +48,13 @@ const router = createBrowserRouter([
           path:'/my-toys',
           element:<PrivetRoute><MyToys/></PrivetRoute>
         },
-        // {
-        //   path:'/view-details/:id',
-        //   element:<PrivetRoute><ViewDetails/></PrivetRoute>,
-        //   loader: ({params})=fetch(`https://toy-marketplace-server-sigma.vercel.app/products/${params.id}`)
-        // }
+        {
+          path:'/view-details/:id',
+          element:<PrivetRoute>
+            <ViewDetails/>
+            </PrivetRoute>,
+          
+        }
 
       ]
     },
