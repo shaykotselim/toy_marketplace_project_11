@@ -1,15 +1,17 @@
 import { Button, } from "@material-tailwind/react";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Tab, TabList, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const ShopByCategory = () => {
   const [categories, setCategories] = useState([]);
   const [filteredCategories, setFilteredCategories] = useState([]);
-
+  const {user} = useContext(AuthContext)
   useEffect(() => {
     fetch("https://toy-marketplace-server-sigma.vercel.app/products")
       .then((res) => res.json())
@@ -18,7 +20,15 @@ const ShopByCategory = () => {
         setFilteredCategories(data);
       });
   }, []);
-
+  const handleTost = ()=>{
+        if(!user){
+          Swal.fire({
+            icon: 'warning',
+            title: 'NOT!',
+            text: 'After Login You Can See View Details!',
+          })
+        }
+  }
   const handleButtonClick = (subCategory) => {
     if (subCategory === "all") {
       setFilteredCategories(categories);
@@ -79,7 +89,7 @@ const ShopByCategory = () => {
                 </div>
                 <div className="flex justify-center">
                   <Link to={`/view-details/${category._id}`}>
-                  <Button>View Details</Button>
+                    <Button onClick={handleTost}>View Details</Button>
                   </Link>
                 </div>
               </div>

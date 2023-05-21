@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import {
   Card,
   Input,
-  Checkbox,
   Button,
   Typography,
 } from "@material-tailwind/react";
