@@ -1,9 +1,11 @@
-import { Button } from "@material-tailwind/react";
+import { Button, } from "@material-tailwind/react";
 import React, { useEffect, useState } from "react";
 import { Tab, TabList, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-
 import { FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
+
 const ShopByCategory = () => {
   const [categories, setCategories] = useState([]);
   const [filteredCategories, setFilteredCategories] = useState([]);
@@ -28,10 +30,10 @@ const ShopByCategory = () => {
       console.log(filtered);
     }
   };
-
+ 
   return (
     <div className="container mx-auto mt-8">
-        <p className="text-center text-3xl font-bold p-4">Shop By Category</p>
+      <p className="text-center text-3xl font-bold p-4">Shop By Category</p>
       <Tabs>
         <TabList>
           <Tab>
@@ -53,10 +55,9 @@ const ShopByCategory = () => {
             </Button>
           </Tab>
         </TabList>
-        
+
         <div className="container lg:grid gap-4 grid-cols-2 mx-auto">
           {filteredCategories.map((category) => (
-            
             <div className="shadow-xl rounded-xl" key={category.title}>
               <div className="flex justify-center">
                 <img
@@ -77,14 +78,12 @@ const ShopByCategory = () => {
                   </p>
                 </div>
                 <div className="flex justify-center">
-                  <Button className="3/4 ">View Details</Button>
+                  <Button>View Details</Button>
                 </div>
               </div>
             </div>
-          
           ))}
         </div>
-        
       </Tabs>
     </div>
   );

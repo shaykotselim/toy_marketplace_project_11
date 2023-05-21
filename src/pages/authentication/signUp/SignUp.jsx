@@ -9,6 +9,7 @@ import {
   import { FcGoogle } from 'react-icons/fc';
   import { Link } from "react-router-dom";
 import { AuthContext } from '../../../provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const SignUp = () => {
     const {googleSignIn,createUserEmail,profileUpdate} = useContext(AuthContext);
@@ -26,18 +27,33 @@ const SignUp = () => {
         .then(result =>{
             const loggedUser = result.user;
             profileUpdate(result.user,name, photo_url)
-            alert('Profile name & photo url update');
+            Swal.fire({
+              icon: 'success',
+              title: 'Congratulations',
+              text: 'Register Successfully!',
+             
+            })
+            redirectToHomePage()
             setError(loggedUser);
         })
         .then(error=>{
             setError(error.message)
         })
       }
+      const  redirectToHomePage= ()=>{
+        window.location.href ='/'
+      }
     const handleGoogleSignIn=()=>{
         googleSignIn()
         .then(result =>{
-            setError("Registration Successfully");
-            
+            // setError("Registration Successfully");
+            Swal.fire({
+              icon: 'success',
+              title: 'Congratulations',
+              text: 'Google Login Successfully!',
+             
+            })
+            redirectToHomePage()
         })
         .catch(error=>{
             setError(error.message);
