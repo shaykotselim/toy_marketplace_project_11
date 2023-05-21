@@ -3,7 +3,7 @@ import banners from "../../assets/banner/banners.jpg"
 const BannerADD = () => {
     return (
         <div>
-            <img className='w-full h-[300px]' src={banners} alt="" />
+            <img  className='w-full h-[400px] object-cover' src={banners} alt="" />
         </div>
     );
 };
