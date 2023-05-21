@@ -33,7 +33,27 @@ const MyToys = () => {
         })
     }
 }
-
+ const handleConfirm = id =>{
+    fetch(`https://toy-marketplace-server-sigma.vercel.app/products/${id}`,{
+        method: 'PATCH',
+        headers:{
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({status: 'confirm'})
+     })
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data);
+        if(data.modifiedCount > 0){
+            // update state
+            const remaining = mytoys.filter(mytoy => booking._id !== id);
+            const updated = mytoys.find(mytoy => mytoy._id === id);
+            updated.status = 'confirm'
+            const newProducts = [updated, ...remaining];
+            setMytoys(newProducts); 
+        }
+    } )
+ }
   //Table Area --------------------------------
   const TABLE_HEAD = [
     "Seller-Details",
@@ -85,6 +105,7 @@ const MyToys = () => {
             <tbody className="py-4">
               {mytoys.map((mytoy) => (
                 <MyToysTable
+                handleConfirm={handleConfirm}
                 handleDelete={handleDelete}
                 mytoy={mytoy} key={mytoy._id}>
                  

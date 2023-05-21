@@ -3,10 +3,10 @@ import React, { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { PencilIcon,} from "@heroicons/react/24/solid";
 // import Swal from 'sweetalert2'
-const MyToysTable = ({ mytoy, handleDelete }) => {
+const MyToysTable = ({ mytoy, handleDelete, handleConfirm }) => {
   const { user } = useContext(AuthContext);
   console.log(mytoy);
-  const { image, sellerName,title, price, rating, subCategory, _id } = mytoy;
+  const { image, sellerName,title, price, rating, subCategory, _id, status } = mytoy;
     
   
   
@@ -69,7 +69,9 @@ const MyToysTable = ({ mytoy, handleDelete }) => {
       <td>
         <Tooltip content="Update">
           <IconButton variant="text" color="blue-gray">
-            <PencilIcon className="h-4 w-4" />
+            {
+                status === 'confirm' ? <span className="font-bold text-blue-600">Confirmed</span>:
+                <PencilIcon onClick={()=>handleConfirm(_id)} className="h-4 w-4" />}
           </IconButton>
         </Tooltip>
       </td>
