@@ -1,47 +1,31 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
-import MyToysTable from "./MyToysTable";
 import { ChevronUpDownIcon } from "@heroicons/react/24/outline";
 import { Card, Typography, CardBody } from "@material-tailwind/react";
+import AllToysTable from "./AllToysTable";
 
-const MyToys = () => {
+const AllToys = () => {
   const { user } = useContext(AuthContext);
-  const [mytoys, setMytoys] = useState([]);
+  const [products, setProducts] = useState([]);
 
   // loading data here---------------------------------------
-  const url = `https://toy-marketplace-server-sigma.vercel.app/products?email=${user?.email}`;
+  const url = 'https://toy-marketplace-server-sigma.vercel.app/products';
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setMytoys(data));
+      .then((data) => setProducts(data));
   }, []);
-//---------------------------------------------------------
-  const handleDelete = id =>{
-    const proceed = confirm("Are You Sure You Want to Delete?")
-    if(proceed){
-        fetch(`https://toy-marketplace-server-sigma.vercel.app/products/${id}`, {
-            method: 'DELETE'
-        })
-        .then(res=> res.json())
-        .then(data =>{
-            console.log(data);
-            if(data.deletedCount > 0){
-                alert('Deleted Successfully');
-                const remaining = mytoys.filter(mytoy=> mytoy._id !== id);
-                setMytoys(remaining)
-            }
-        })
-    }
-}
+
+
 
   //Table Area --------------------------------
   const TABLE_HEAD = [
-    "Seller-Details",
-    "Name of Product & Image ",
-    "Category & Rating",
-    "Price & Quantity",
-    "Delete",
-    "Update",
+    "Name of Seller",
+    "Name of Product  ",
+    "Product Sub Category",
+    "Price",
+    "Available Quantity",
+    "View Details",
   ];
 
   return (
@@ -51,7 +35,7 @@ const MyToys = () => {
         </div>
       <div className="border-b-4 mt-8 border-black">
         <h1 className="text-center text-3xl font-bold">
-         Added <span className="text-blue-400">My-Toys</span>
+         All <span className="text-blue-400">-Toys</span>
         </h1>
       </div>
 
@@ -83,12 +67,12 @@ const MyToys = () => {
               </tr>
             </thead>
             <tbody className="py-4">
-              {mytoys.map((mytoy) => (
-                <MyToysTable
-                handleDelete={handleDelete}
-                mytoy={mytoy} key={mytoy._id}>
+              {products.map((product) => (
+                <AllToysTable
+              
+                product={product} key={product._id}>
                  
-                </MyToysTable>
+                </AllToysTable>
               ))}
             </tbody>
           </table>
@@ -98,4 +82,4 @@ const MyToys = () => {
   );
 };
 
-export default MyToys;
+export default AllToys;

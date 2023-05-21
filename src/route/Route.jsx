@@ -7,6 +7,8 @@ import SignUp from "../pages/authentication/signUp/SignUp";
 import AddHome from "../pages/addToys/AddHome";
 import MyToys from "../pages/myToys/MyToys";
 import PrivetRoute from "./PrivetRoute";
+import AllToys from "../pages/allToys/AllToys";
+import Blog from "../pages/blog/Blog";
 // import AddToys from "../pages/addToys/AddToys";
 
 const router = createBrowserRouter([
@@ -22,6 +24,10 @@ const router = createBrowserRouter([
         {
             path:'/sign-in',
             element: <SingIn/>
+        },
+        {
+          path:'/blog',
+          element:<Blog/>
         }, 
         {
           path:'/sign-up',
@@ -31,6 +37,10 @@ const router = createBrowserRouter([
           path:'/add-toys',
           element:<AddHome/>,
           // loader:({params}) => fetch(``)
+        },
+        {
+          path:'/all-toys',
+          element:<AllToys/>
         },
         {
           path:'/my-toys',

@@ -38,17 +38,17 @@ const ShopByCategory = () => {
             <Button onClick={() => handleButtonClick("all")}>All</Button>
           </Tab>
           <Tab>
-            <Button onClick={() => handleButtonClick("math-learning-toys")}>
+            <Button onClick={() => handleButtonClick("math")}>
               Math-Learning-Toys
             </Button>
           </Tab>
           <Tab>
-            <Button onClick={() => handleButtonClick("science-kits")}>
+            <Button onClick={() => handleButtonClick("science")}>
               Science Kit
             </Button>
           </Tab>
           <Tab>
-            <Button onClick={() => handleButtonClick("engineering-tools")}>
+            <Button onClick={() => handleButtonClick("engineering")}>
               Engineering Tools
             </Button>
           </Tab>
@@ -57,17 +57,17 @@ const ShopByCategory = () => {
         <div className="container lg:grid gap-4 grid-cols-2 mx-auto">
           {filteredCategories.map((category) => (
             
-            <div className="shadow-xl rounded-xl" key={category.name}>
+            <div className="shadow-xl rounded-xl" key={category.title}>
               <div className="flex justify-center">
                 <img
                   className="h-[400px] p-4 w-[600px]"
-                  src={category.img}
+                  src={category.image}
                   alt=""
                 />
               </div>
               <div className="p-4">
                 <p className="text-orange-400 text-xl font-bold text-center">
-                  {category.name}
+                  {category.title}
                 </p>
                 <div className="flex justify-center gap-12 py-2 items-center">
                   <p className="font-bold">Price: ${category.price}</p>

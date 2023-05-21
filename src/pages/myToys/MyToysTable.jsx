@@ -1,12 +1,15 @@
-import { Avatar, IconButton, Tooltip, Typography } from "@material-tailwind/react";
+import { Avatar, Button, IconButton, Tooltip, Typography } from "@material-tailwind/react";
 import React, { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
-import { PencilIcon, UserPlusIcon } from "@heroicons/react/24/solid";
-
-const MyToysTable = ({ mytoy }) => {
+import { PencilIcon,} from "@heroicons/react/24/solid";
+// import Swal from 'sweetalert2'
+const MyToysTable = ({ mytoy, handleDelete }) => {
   const { user } = useContext(AuthContext);
-  const { img, name, price, rating, subCategory } = mytoy;
-
+  console.log(mytoy);
+  const { image, sellerName,title, price, rating, subCategory, _id } = mytoy;
+    
+  
+  
   return (
     <tr className="border py-4">
       <td>
@@ -28,11 +31,11 @@ const MyToysTable = ({ mytoy }) => {
         <div className="flex items-center gap-3">
           {/* <Avatar src={img} alt={name} size="sm" /> */}
           <div className="py-8">
-          <img className="h-[100px] w-[150px]" src={img} alt="" />
+          <img className="h-[100px] w-[150px]" src={image} alt="" />
           </div>
           <div className="flex flex-col">
             <Typography variant="small" color="blue-gray" className="font-normal">
-              {name}
+              {title}
             </Typography>
           </div>
         </div>
@@ -60,7 +63,7 @@ const MyToysTable = ({ mytoy }) => {
       </td>
       <td>
         <Tooltip content="Delete">
-          <p className="hover:bg-gray-100 hover:cursor-pointer hover:rounded p-2 text-center font-bold">X</p>
+          <Button onClick={()=>handleDelete(_id) } className="hover:bg-orange-400 hover:cursor-pointer hover:rounded p-2 text-center font-bold">X</Button>
         </Tooltip>
       </td>
       <td>

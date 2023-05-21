@@ -25,6 +25,7 @@ const AddToys = () => {
         const photo_url = form.photo_url.value;
         const rating = form.rating.value;
         const description = form.description.value;
+        const quantity = form.quantity.value
         const addProduct = {
             sellerName:name,
             email,
@@ -34,9 +35,10 @@ const AddToys = () => {
             image:photo_url,
             rating:rating,
             details:description,
+            _quantity:quantity,
         }
         console.log(addProduct);
-        fetch('http://localhost:5000/products', {
+        fetch('https://toy-marketplace-server-sigma.vercel.app/products', {
             method: 'POST',
             headers: {
                     'content-type': 'application/json'
@@ -68,7 +70,7 @@ const AddToys = () => {
             <Input name="price" className='p-2 flex mt-4 lg:mt-0' size="lg" label="Product Price"/>
            </div>
            <div className='px-4 lg:flex lg:mt-4 gap-4'>
-           <Input name="category" className='p-2 flex mt-4 lg:mt-0' size="lg" label="Sub-Category"/>
+           <Input name="category" defaultValue="math/science/engineering " className='p-2 flex mt-4 lg:mt-0' size="lg" label="Sub-Category"/>
             <Input name="photo_url" className='p-2 flex mt-4 lg:mt-0' size="lg" label="Enter Your Photo url"/>
            </div>
            <div className='px-4 lg:flex lg:mt-4 gap-4'>

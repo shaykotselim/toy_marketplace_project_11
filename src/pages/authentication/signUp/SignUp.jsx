@@ -73,7 +73,7 @@ const SignUp = () => {
             </Link>
           </Typography>
         </form>
-        <Button onClick={handleGoogleSignIn}  className='mt-2 bg-blue-500 flex justify-center items-center gap-1 text-xl' fullWidth>
+        <Button onClick={handleGoogleSignIn}  className='mt-2 mb-4 bg-blue-500 flex justify-center items-center gap-1 text-xl' fullWidth>
             <span><FcGoogle/></span><span>Sign Up With Google</span> 
         </Button>
       </Card>
