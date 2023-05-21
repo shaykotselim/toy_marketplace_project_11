@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { FaStar } from "react-icons/fa";
+import useTitle from '../../../hooks/useTitle';
 const ViewDetails = () => {
+    useTitle("View details")
     const {id} = useParams();
     const [details, setDetails] = useState();
     const detailsProduct = details?.find((detail)=> detail._id === id);

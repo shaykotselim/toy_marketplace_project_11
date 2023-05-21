@@ -4,8 +4,10 @@ import MyToysTable from "./MyToysTable";
 import { ChevronUpDownIcon } from "@heroicons/react/24/outline";
 import { Card, Typography, CardBody } from "@material-tailwind/react";
 import Swal from "sweetalert2";
+import useTitle from "../../hooks/useTitle";
 
 const MyToys = () => {
+    useTitle('My-toys')
   const { user } = useContext(AuthContext);
   const [mytoys, setMytoys] = useState([]);
 

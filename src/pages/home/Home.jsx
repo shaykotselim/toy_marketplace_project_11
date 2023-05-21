@@ -4,9 +4,11 @@ import Gallary from './gallary/Gallary';
 import CallToActions from './CallToAction';
 import About from './about/About';
 import ShopByCategory from './shopByCategory/ShopByCategory';
+import useTitle from '../../hooks/useTitle';
 
 
 const Home = () => {
+    useTitle('Home')
     return (
         <div>
             <Banner/>

@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { Button } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
 
 const AllToysTable = ({ product}) => {
 //   const { user } = useContext(AuthContext);
 
-  const { image, sellerName, title, price,  subCategory, _quantity } = product;
+  const { _id, sellerName, title, price,  subCategory, _quantity } = product;
 
   return (
     <tr className="border py-4">
@@ -47,7 +48,7 @@ const AllToysTable = ({ product}) => {
         </div>
       </td>
       <td>
-        <Button> View Details</Button>
+        <Link to={`/view-details/${_id}`}><Button> View Details</Button></Link>
       </td>
     </tr>
   );

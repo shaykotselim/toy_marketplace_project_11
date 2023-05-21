@@ -10,8 +10,10 @@ import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../../../provider/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from "../../../hooks/useTitle";
 
 const SingIn = () => {
+  useTitle('Sing-in')
   const {signIn,googleSignIn} = useContext(AuthContext)
   const [error, setError] = useState("")
   const handleSignIn=event=>{

@@ -3,8 +3,10 @@ import { AuthContext } from "../../provider/AuthProvider";
 import { ChevronUpDownIcon } from "@heroicons/react/24/outline";
 import { Card, Typography, CardBody } from "@material-tailwind/react";
 import AllToysTable from "./AllToysTable";
+import useTitle from "../../hooks/useTitle";
 
 const AllToys = () => {
+  useTitle('All toys')
   const { user } = useContext(AuthContext);
   const [products, setProducts] = useState([]);
 
