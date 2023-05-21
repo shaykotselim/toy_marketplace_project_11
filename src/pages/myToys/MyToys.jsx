@@ -3,6 +3,7 @@ import { AuthContext } from "../../provider/AuthProvider";
 import MyToysTable from "./MyToysTable";
 import { ChevronUpDownIcon } from "@heroicons/react/24/outline";
 import { Card, Typography, CardBody } from "@material-tailwind/react";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -17,7 +18,37 @@ const MyToys = () => {
   }, []);
 //---------------------------------------------------------
   const handleDelete = id =>{
-    const proceed = confirm("Are You Sure You Want to Delete?")
+    Swal.fire({
+        title: 'Are You Sure?',
+        text: "You Want to be delete this!!",
+        icon: 'warning',
+        showCancelButton : true, 
+        confirmButtonColor : '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result)=>{
+        if(result.isConfirmed){
+            
+        fetch(`https://toy-marketplace-server-sigma.vercel.app/products/${id}`, {
+            method: 'DELETE'
+        })
+        .then(res=>res.json())
+        .then(data =>{
+            console.log(data);
+            if(data.deletedCount > 0){
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                  )
+                const remaining = mytoys.filter(mytoy=> mytoy._id !== id);
+                setMytoys(remaining)
+
+            }
+        })
+
+        }
+    })
     if(proceed){
         fetch(`https://toy-marketplace-server-sigma.vercel.app/products/${id}`, {
             method: 'DELETE'
