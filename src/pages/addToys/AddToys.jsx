@@ -9,6 +9,7 @@ import {
   } from "@material-tailwind/react";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const AddToys = () => {
@@ -48,6 +49,12 @@ const AddToys = () => {
         .then(res=>res.json())
         .then(data =>{
             console.log(data);
+            Swal.fire({
+                icon: 'success',
+                title: 'Done',
+                text: 'Your Data Added!!',
+                
+              })
             form.reset()
         })
       }

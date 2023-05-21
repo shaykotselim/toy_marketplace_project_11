@@ -9,6 +9,7 @@ import {
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const SingIn = () => {
   const {signIn,googleSignIn} = useContext(AuthContext)
@@ -21,20 +22,31 @@ const SingIn = () => {
     console.log(email, password);
     signIn(email, password)
     .then(result=>{
-      const user = result.user
-      setError('Login Successfully');
-      // const location = useLocation();
-      // location.path = '/'
+      const user = result.user;
+      Swal.fire({
+        icon: 'success',
+        title: 'Congratulations',
+        text: 'Login Successfully!',
+      })
+      redirectToHomePage();
     })
     .catch(error=>{
       setError(error.message)
     })
 }
+const  redirectToHomePage= ()=>{
+  window.location.href ='/'
+}
 const handleGoogleSignIn=()=>{
   googleSignIn()
   .then(result =>{
-      setError("Login Successfully");
-      
+    Swal.fire({
+      icon: 'success',
+      title: 'Congratulations',
+      text: 'Google Login Successfully!',
+     
+    })
+    redirectToHomePage();
   })
   .catch(error=>{
       setError(error.message);

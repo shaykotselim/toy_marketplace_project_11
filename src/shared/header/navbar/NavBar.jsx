@@ -11,16 +11,25 @@ import {
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import { AuthContext } from "../../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const NavBar = () => {
   const [openNav, setOpenNav] = useState(false);
   //-------------LogOut Area Start------------------
   const { user, logOut } = useContext(AuthContext);
   console.log(user);
+  const  redirectToHomePage= ()=>{
+    window.location.to ='/'
+  }
   const handleSignOut = () => {
     logOut()
       .then(() => {
-        alert("Sign-Out Successfully");
+        Swal.fire({
+          icon: 'success',
+          title: 'Done!',
+          text: 'Logout-Successfully!',
+        })
+        redirectToHomePage()
       })
       .catch((error) => {
         alert(error.message);
